@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+body{
+    font-size: 2rem;
+}
+
+.section{
+    background: black;
+    height: 100rem;
+}
+
+
+.section--firts{
+    background: blue;
+}
+.section--second{
+    background-color: red;
+}
+
+
+.section--third{
+    background:white;
+    display: flex;
+    height: auto;
+    padding: 4rem;
+    align-items: center;
+
+}
+
+
+.arrow{
+    width: 10%;
+    background: white;
+    font-size: 300%;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.reviews{
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    flex-wrap: wrap;
+
+}
+
+.review{
+    width: 30rem;
+    min-height: 2 0rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 0.7rem 1rem 0, 
+    inset 0 -1rem  1rem -1rem rgba(100, 100, 111, 0.2) ;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: relative;
+    animation-name: fade-in;
+    animation-duration: 0.8s;
+}
+
+.review:nth-of-type(4),.review:nth-of-type(5),.review:nth-of-type(6){
+    display: none;
+}
+
+.quote{
+    font-size: 500%;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 0.5;
+
+}
+
+.stars{
+    color: gold;
+}
+
+.review > p {
+    font-size: 65%;
+    font-style: italic;
+    padding-bottom: 5rem;
+    border-bottom: 0.5rem solid rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0);
+
+    }
+
+
+}
+
+@media screen and (max-width: 50rem) {
+    .arrow{
+        display: none;
+    }
+    .reviews{
+        width: 100%;
+    }
+}
