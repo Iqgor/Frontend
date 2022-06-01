@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 2rem;
+    background: #eee;
+    font-family: sans-serif;
+    padding: 8rem;
+    overflow: hidden;
+}
+
+body::after, body::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-name:faderight ;
+    animation-duration: 1.2s;
+    transform-origin: right;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+body::before{
+    background:yellowgreen ;
+    animation-delay: 0.3s;
+    z-index: 1;
+}
+
+body::after{
+    background: pink;
+    z-index: 2;
+} 
+
+main{
+    width:100%;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-in;
+    
+  
+}
+
+.inputs{
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap
+}
+
+.inputs > div{
+    display: flex;
+    align-items: center;
+    width: 40rem;
+    gap: 2rem;
+}
+
+
+
+.filter{
+    width: 5rem;
+    height: 5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #eee;
+    border-radius: 0.5rem ;
+    box-shadow: inset 0 0 0 0.2rem rgba(0,0,0,0.1) ;
+}
+
+.filter:checked ~ .label {
+    text-decoration: underline;
+}
+
+.filter:hover, .label:hover{
+    cursor: pointer;
+}
+
+
+.filter:checked{
+    background: pink;
+
+}
+
+
+
+.games{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin: auto;
+}
+
+.game{
+    width: 25rem;
+    height: 30rem;
+    list-style: none;
+    object-fit: cover;
+    transition: 0.2s transform;
+    flex-grow:1;
+}
+
+.game:hover{
+    transform: scale(1.02) translateY(-0.7rem) ;
+    
+    cursor: pointer;
+}
+
+.game img{
+    width: 100%;
+    object-fit: contain;
+    height:100% ;
+}
+
+@keyframes faderight {
+    from{
+        transform: scaleX(1);
+
+    }
+    to{
+        transform: scaleX(0);
+    }
+
+}
+
+@keyframes popup {
+    to{
+        opacity: 1;
+    }
+}
