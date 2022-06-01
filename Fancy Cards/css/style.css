@@ -1,0 +1,196 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+html{
+    font-size: 62.5%;
+
+}
+
+body{   
+    font-size:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    gap: 2rem;
+    padding: 8rem ;
+    
+}
+
+.circle{
+    height: 50rem;
+    width: 50rem;
+   
+    position: absolute;
+    
+    border-radius: 50%;
+}
+
+.circle1{
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #3BACB6,30%,#f73d93 );
+}
+
+.circle2{
+    bottom:0 ;
+    right: 0;
+    background: linear-gradient(to right, #eb5353,70%,#FFD24C );
+}
+
+.card{
+    height: 50rem;
+    width: 40rem;
+    box-shadow:  0 0 1rem 0 rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    position: relative;
+    background:#eee;
+}
+
+.card::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+    top:0;
+    left: 0;
+    background:linear-gradient(#EB5353, #FFD24C, #3BACB6, #F73D93) ;
+    z-index: -1;
+    animation-name: rainbow;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    border-radius: 0.5rem;
+
+    
+}
+
+.card_figure{
+    height: 30%;
+    width: 100%;
+}
+
+.card_figure img{
+    width: 100%;
+    height: 100% ;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0 ;
+    
+}
+
+.card_body{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+
+
+.card_categories{
+    display: flex;
+    gap: 0.7rem;
+}
+
+.card_categories:hover{
+    cursor: pointer;
+}
+
+.card_heading{
+    font-size: 90%;
+}
+
+.card_paragraph{
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.categorie{
+    list-style: none;
+    padding: 0.5rem 2rem;
+    color: white;
+    font-size: 80%;
+    border-radius: 5rem;
+    
+}
+
+.categorie--graphic{
+    background: #3BACB6;
+    
+}
+.categorie--gaming{
+    background: greenyellow;
+ 
+}
+.categorie--mining{
+    background: violet;
+}
+
+.categorie--huis{
+    background: #FFD24C;
+}
+
+.categorie--markt{
+    background: #EB5353;
+}
+
+.categorie--natuur{
+    background: #2dd960;
+}
+
+.card_footer{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.card_footer h3{
+    font-size: 70%;
+    font-weight: 300;
+
+}
+
+.card_footer p {
+    font-size: 60%;
+    font-weight: 300;
+}
+
+.prof_pic{
+    height: 6rem;
+    width: 6rem;
+    object-fit: cover;
+    border-radius: 5rem;   
+
+
+}
+
+
+@media screen and (max-width:75rem) {
+    .circle{ 
+        display: none;
+    }
+    .card{
+        height: auto;
+    }
+    body{
+        padding: 2rem;
+    }
+}
+
+@keyframes rainbow {
+    from{
+        filter: blur(10rem)
+    }
+    to{
+        filter: blur(0.5rem);
+    }
+}
+
